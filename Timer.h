@@ -4,19 +4,17 @@
 #include<chrono>
 #include<iostream>
 
-using namespace std;
-
 //typedef to make less typing
-typedef chrono::high_resolution_clock myClock;
+typedef std::chrono::high_resolution_clock myClock;
 
 class Timer
 {
 	//time point variable to hold the starting time
-	chrono::time_point<myClock> begin;
+	std::chrono::time_point<myClock> begin;
 
 	//duration variable to hold the total seconds passed
 	//between start() and stop() stored as a double
-	chrono::duration<double> elapsedTime;
+	std::chrono::duration<double> elapsedTime;
 
 public:
 
@@ -34,10 +32,10 @@ public:
 	}
 
 	//overload the ostream operator for outputting the elapsed time
-	friend ostream& operator << (ostream&, const Timer&);
+	friend std::ostream& operator << (std::ostream&, const Timer&);
 };
 
-ostream& operator << (ostream& out, const Timer& t)
+std::ostream& operator << (std::ostream& out, const Timer& t)
 {
 	out << t.elapsedTime.count();
 	return out;
