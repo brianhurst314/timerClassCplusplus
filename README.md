@@ -1,4 +1,3 @@
-# timerClassCplusplus
 A simple timer class for timing how long code takes to execute
 
 This class can be used to create a Timer object
